@@ -74,6 +74,27 @@ public class MyTest {
 		System.out.println(c.i);// 9
 		System.out.println(d.i);// 9 所以输出值不是8 而是9
 	}
+	/**
+	 * 注意和上面的区别
+	 */
+	@Test
+	public void test44() {
+		Number number1 = new Number();
+		Number number2 = number1;
+		number2 = null;
+		System.out.println(number1);
+		System.out.println(number2);
+		
+		Number[] numbers = {new Number()};
+		Number number0 = numbers[0];
+		numbers[0] = null;
+		//注意这里不为空，numbers[0]其实也是句柄，虽然把numbers[0]置为空
+		//但是new Number() 这个对象还在，number0句柄指向的还是这个对象，所以不为空
+		System.out.println(number0);
+	}
+	
+	
+	
 	public void f(Letter x){
 		x.c = 'z';
 	}
