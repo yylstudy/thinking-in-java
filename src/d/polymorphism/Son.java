@@ -1,9 +1,9 @@
 package d.polymorphism;
 
 public class Son extends Father{
-	public String s = "è·å–å­ç±»å±æ€§";
+	public String s = "»ñÈ¡×ÓÀàÊôĞÔ";
 	@Override
 	public void method() {
-		System.out.println("è¿è¡Œå­ç±»æ–¹æ³•");
+		System.out.println("ÔËĞĞ×ÓÀà·½·¨");
 	}
 }
