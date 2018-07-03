@@ -40,13 +40,16 @@ public class MyTest6 {
 		}
 		
 		public Object clone() {
-			Object obj = null;
+			Snake obj = null;
 			try {
 				//这个意味着浅克隆，只有最外层的Snake由它复制，通常可在一个可克隆的类中调用super.clone()
 				//以确保所有基础类行动能够进行，随着为对象内每个句柄都明确调用clone方法，否则那些句柄会变成原始对象的句柄，
 				//也就是浅克隆，构造器的调用也如此，首先构造基础构造器，然后是衍生类的构造器，知道最底层的构造器，区别在于clone()
 				//方法不是构造器，所以没有办法实现自动克隆，为了实现深克隆，只有自己明确进行定义
-				obj = super.clone();
+				obj = (Snake) super.clone();
+//				if(this.next!=null) {
+//					obj.next = (Snake) this.next.clone();
+//				}
 			} catch (CloneNotSupportedException e) {
 				e.printStackTrace();
 			}
